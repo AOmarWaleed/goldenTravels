@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+/* CUSTOM PROBIRTIES */
+:root {
+  /* FONTFAMILY */
+  --ff-primary: "Cairo", sans-serif;
+
+  /* COLORS */
+  --color-default: #323536;
+  --color-primary: #b48529;
+  --color-second: #b48529;
+  --color-white: #fff;
+  --color-body: #e4e9f7;
+  --color-light: #e0e0e0;
+}
+
+/* UTILITIES */
+.bg-main {
+  background-color: var(--color-primary);
+}
+.btn-main {
+  background-color: var(--color-primary);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* RESET */
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: var(--ff-primary);
+  background-color: #eee;
+}
+
+.form-check-input:checked {
+  background-color: rgb(183, 154, 100) !important;
+}
+
+.form-check .form-check-input {
+  margin-right: -0.7em;
+}
+
+.mat-content {
+  align-items: center;
+  justify-content: space-between;
+}

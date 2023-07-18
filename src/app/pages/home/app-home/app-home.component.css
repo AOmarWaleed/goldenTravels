@@ -1,0 +1,66 @@
+.home-section {
+  position: relative;
+  background-color: var(--color-body);
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.home-section .text {
+  display: inline-block;
+  color: var(--color-default);
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px;
+}
+
+.sidebar.open .home-section {
+  left: 250px;
+  width: calc(100% - 250px);
+}
+
+.navbar-logo {
+  width: 97px;
+  height: 100px;
+
+  background: #ffffff;
+}
+
+.main {
+  width: 50%;
+  margin: 50px auto;
+}
+/* Bootstrap 4 text input with search icon */
+.has-search .form-control {
+  padding-right: 2.375rem;
+}
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: white;
+  background-color: var(--color-primary);
+}
+
+.nav-link.active {
+  background-color: var(--color-primary) !important;
+  color: var(--color-body) !important;
+}
+.form-check-input {
+  background-color: var(--color-primary) !important;
+  color: var(--color-body) !important;
+}
+
+/* table to make the cell contain its content */
+th,
+td {
+  white-space: nowrap;
+}

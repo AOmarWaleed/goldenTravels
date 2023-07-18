@@ -1,0 +1,95 @@
+<div class="container fw-bold" style="font-family: cairo; max-width: 900px">
+  <div class="mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="text-center fw-bolder fs-4">
+          تسجيل حساب في الذهبيه للسياحه
+        </h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="signupForm" (ngSubmit)="signup()">
+          <div class="form-group">
+            <label class="my-2" for="username">اسم المستخدم :</label>
+            <input
+              formControlName="userName"
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="ادخل اسم المستخدم"
+            />
+
+            <p
+              class="alert alert-danger py-2 mt-2"
+              *ngIf="userName?.errors && (userName?.touched || clicked)"
+            >
+              الرجاء ادخال اسم المستخدم
+            </p>
+          </div>
+          <div class="form-group">
+            <label class="my-2" for="email">: البريد الالكترونى</label>
+            <input
+              formControlName="email"
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="ادخل البريد الالكترونى"
+            />
+
+            <p
+              class="alert alert-danger py-2 mt-2"
+              *ngIf="email?.errors && (email?.touched || clicked)"
+            >
+              الرجاء ادخال البريد الالكترونى
+            </p>
+          </div>
+          <div class="form-group">
+            <label class="my-2" for="password">رقم السر :</label>
+            <input
+              formControlName="password"
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="ادخل رقم السر"
+            />
+
+            <p
+              class="alert alert-danger py-2 mt-2"
+              *ngIf="password?.errors && (password?.touched || clicked)"
+            >
+              الرجاء ادخال رقم السر
+            </p>
+          </div>
+          <div class="form-group">
+            <label class="my-2" for="confirm-password">اعادة رقم السر:</label>
+            <input
+              formControlName="rePassword"
+              type="password"
+              class="form-control"
+              id="confirm-password"
+              placeholder="الرجاء ادخال رقم السر مره اخرى"
+            />
+
+            <p
+              class="alert alert-danger py-2 mt-2"
+              *ngIf="rePassword?.errors && (rePassword?.touched || clicked)"
+            >
+              الرجاء ادخال رقم السر
+            </p>
+          </div>
+          <div class="form-group">
+            <button
+              type="submit"
+              class="btn btn-block mt-3"
+              style="background-color: #b48529"
+            >
+              <span *ngIf="isLoading">
+                <i class="fa fa-spinner fa-spin"></i>
+              </span>
+              <span *ngIf="!isLoading"> تسجيل حساب </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container fw-bold" style="font-family: cairo; max-width: 900px">
+  <div class="mt-5">
+    <div class="card">
+      <div class="card-header fw-bold">
+        <!-- <h3 class="text-center">Welcome To Golden travel</h3> -->
+        <h3 class="text-center fs-3">مرحبا بك فى الذهبيه للسياحه</h3>
+      </div>
+      <div class="card-body fw-bold" style="font-family: cairo">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="form-group">
+            <label for="username" class="my-2">اسم المستخدم :</label>
+            <input
+              formControlName="emailOrUserName"
+              type="text"
+              class="form-control fw-bold"
+              id="username"
+              placeholder="ادخل اسم المستخدم"
+            />
+            <p
+              class="alert alert-danger py-2 mt-2"
+              *ngIf="userName?.errors && userName?.touched"
+            >
+              الرجاء ادخال اسم المستخدم
+            </p>
+          </div>
+          <div class="form-group fw-bold">
+            <label for="password" class="my-2">رقم السر:</label>
+            <input
+              formControlName="password"
+              type="password"
+              class="form-control fw-bold"
+              id="password"
+              placeholder="ادخل رقم السر"
+            />
+          </div>
+          <div class="form-group fw-bold mt-3">
+            <button
+              type="submit"
+              class="btn btn-block fw-bold"
+              style="background-color: #b48529"
+            >
+              تسجبل الدخول
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

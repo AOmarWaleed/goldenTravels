@@ -1,0 +1,598 @@
+<div class="container py-5 border-bottom">
+  <div class="row align-items-center">
+    <div class="col-md-6 p-2 ps-5">
+      <p class="fw-bold" style="font-family: Cairo">البحث</p>
+      <div class="row">
+        <div class="col">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control bottom-15 d-flex align-iteme-center fw-semibold justify-content-center my-3 rounded-3 position-relative"
+              style="font-family: cairo"
+              placeholder=" ادخل رقم جوال العميل  "
+              id="inputGroup-sizing-lg "
+            />
+            <i
+              class="fa-solid fa-magnifying-glass bg-main text-white p-1 position-absolute m-4 d-flex start-0 mb-1"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 p-4">
+      <!-- end search section -->
+      <div class="row d-flex justify-content-between align-items-center">
+        <button
+          type="button"
+          class="bg-main rounded-2 text-white border-0 fw-medium col-3 p-2"
+          style="font-family: cairo; width: fit-content"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          <i class="fa-solid fa-filter"></i>بحث متقدم
+        </button>
+        <div
+          class="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1
+                  class="modal-title fs-5 fw-bolder rounded"
+                  id="staticBackdropLabel "
+                  style="font-family: cairo"
+                >
+                  بحث متقدم
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close fw-bolder m-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body" style="font-family: cairo">
+                <div class="col position-relative" style="font-family: cairo">
+                  <label class="text-center fw-bolder"> فلتر البحث</label>
+                  <input
+                    type="text"
+                    class="form-control mt-2 fw-bolder"
+                    placeholder="اكتب هنا"
+                    aria-label="First name"
+                  />
+                </div>
+                <div class="form-check form-check-inline m-2 fw-semibold">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="exampleRadios"
+                    id="exampleRadios1"
+                    value="option1"
+                    checked
+                  />
+                  <label class="form-check-label" for="exampleRadios1">
+                    رقم الجوال
+                  </label>
+                </div>
+                <div
+                  class="form-check form-check-inline m-2 fw-semibold"
+                  style="font-family: cairo"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="exampleRadios"
+                    id="exampleRadios2"
+                    value="option2"
+                  />
+                  <label class="form-check-label" for="exampleRadios2">
+                    اسم العميل
+                  </label>
+                </div>
+                <div
+                  class="form-check form-check-inline m-2 fw-semibold"
+                  style="font-family: cairo"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="exampleRadios"
+                    id="exampleRadios1"
+                    value="option1"
+                    checked
+                  />
+                  <label class="form-check-label" for="exampleRadios1">
+                    تاريخ عرض السعر
+                  </label>
+                </div>
+                <div
+                  class="form-check form-check-inline m-2 fw-semibold"
+                  style="font-family: cairo"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="exampleRadios"
+                    id="exampleRadios2"
+                    value="option2"
+                  />
+                  <label class="form-check-label" for="exampleRadios2">
+                    تاريخ السفر
+                  </label>
+                </div>
+                <div
+                  class="form-check form-check-inline m-2 fw-semibold"
+                  style="font-family: cairo"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="exampleRadios"
+                    id="exampleRadios1"
+                    value="option1"
+                    checked
+                  />
+                  <label class="form-check-label" for="exampleRadios1">
+                    اسم الموظف
+                  </label>
+                </div>
+                <div
+                  class="form-check form-check-inline m-2 fw-semibold"
+                  style="font-family: cairo"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="exampleRadios"
+                    id="exampleRadios2"
+                    value="option2"
+                  />
+                  <label class="form-check-label" for="exampleRadios2">
+                    نوع الخدمة
+                  </label>
+                </div>
+              </div>
+              <div class="modal-footer fw-semibold" style="font-family: cairo">
+                <button
+                  type="button"
+                  class="btn btn-dark border-0"
+                  style="background-color: #42ba5c"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>بحث
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <a
+            routerLink="/addCustomer"
+            style="font-family: cairo"
+            class="btn btn-success mt-auto"
+          >
+            <i class="fa-solid fa-plus"></i>عميل جديد
+          </a>
+        </div>
+      </div>
+
+      <!-- Button trigger modal -->
+    </div>
+  </div>
+  <!-- end search section -->
+  <!-- start tab header -->
+  <ul class="nav nav-tabs justify-content-evenly" id="myTab" role="tablist">
+    <li class="" role="presentation">
+      <button
+        class="nav-link text-black fs-5 fw-semibold"
+        id="home-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#home-tab-pane"
+        type="button"
+        role="tab"
+        aria-controls="home-tab-pane"
+        aria-selected="true"
+      >
+        <p class="fw-bold" style="font-family: Cairo">احدث عروض الاسعار</p>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link text-black fs-5 fw-semibold"
+        id="profile-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#profile-tab-pane"
+        type="button"
+        role="tab"
+        aria-controls="profile-tab-pane"
+        aria-selected="false"
+      >
+        <p class="fw-bold" style="font-family: Cairo">العقود</p>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <div
+      class="tab-pane fade show active"
+      id="home-tab-pane"
+      role="tabpanel"
+      aria-labelledby="home-tab"
+      tabindex="0"
+    >
+      <div class="table-responsive">
+        <table class="table fw-bold" style="font-family: Cairo">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">نوع الخدمة</th>
+              <th scope="col">التاريخ</th>
+              <th scope="col">اسم العميل</th>
+              <th scope="col">رقم الجوال</th>
+              <th scope="col">الدولة</th>
+              <th scope="col">تاريخ السفر</th>
+              <th scope="col">اسم الموظف</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>نوع الخدمة</td>
+              <td>01/01/2000</td>
+              <td>حمد السيد محمد احمد</td>
+              <td>+966 50 254 2548</td>
+              <td>السعودية</td>
+              <td>01/01/2000</td>
+              <td>احمد السيد محمد</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>نوع الخدمة</td>
+              <td>01/01/2000</td>
+              <td>حمد السيد محمد احمد</td>
+              <td>+966 50 254 2548</td>
+              <td>السعودية</td>
+              <td>01/01/2000</td>
+              <td>احمد السيد محمد</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>نوع الخدمة</td>
+              <td>01/01/2000</td>
+              <td>حمد السيد محمد احمد</td>
+              <td>+966 50 254 2548</td>
+              <td>السعودية</td>
+              <td>01/01/2000</td>
+              <td>احمد السيد محمد</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>نوع الخدمة</td>
+              <td>01/01/2000</td>
+              <td>حمد السيد محمد احمد</td>
+              <td>+966 50 254 2548</td>
+              <td>السعودية</td>
+              <td>01/01/2000</td>
+              <td>احمد السيد محمد</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>نوع الخدمة</td>
+              <td>01/01/2000</td>
+              <td>حمد السيد محمد احمد</td>
+              <td>+966 50 254 2548</td>
+              <td>السعودية</td>
+              <td>01/01/2000</td>
+              <td>احمد السيد محمد</td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>نوع الخدمة</td>
+              <td>01/01/2000</td>
+              <td>حمد السيد محمد احمد</td>
+              <td>+966 50 254 2548</td>
+              <td>السعودية</td>
+              <td>01/01/2000</td>
+              <td>احمد السيد محمد</td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>نوع الخدمة</td>
+              <td>01/01/2000</td>
+              <td>حمد السيد محمد احمد</td>
+              <td>+966 50 254 2548</td>
+              <td>السعودية</td>
+              <td>01/01/2000</td>
+              <td>احمد السيد محمد</td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>نوع الخدمة</td>
+              <td>01/01/2000</td>
+              <td>حمد السيد محمد احمد</td>
+              <td>+966 50 254 2548</td>
+              <td>السعودية</td>
+              <td>01/01/2000</td>
+              <td>احمد السيد محمد</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="profile-tab-pane"
+      role="tabpanel"
+      aria-labelledby="profile-tab"
+      tabindex="0"
+    >
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home-tab-pane"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+          tabindex="0"
+        >
+          <div class="table-responsive">
+            <table class="table fw-bold" style="font-family: Cairo">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">نوع الخدمة</th>
+                  <th scope="col">التاريخ</th>
+                  <th scope="col">اسم العميل</th>
+                  <th scope="col">رقم الجوال</th>
+                  <th scope="col">الدولة</th>
+                  <th scope="col">تاريخ السفر</th>
+                  <th scope="col">اسم الموظف</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>نوع الخدمة</td>
+                  <td>01/01/2000</td>
+                  <td>حمد السيد محمد احمد</td>
+                  <td>+966 50 254 2548</td>
+                  <td>السعودية</td>
+                  <td>01/01/2000</td>
+                  <td>احمد السيد محمد</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>نوع الخدمة</td>
+                  <td>01/01/2000</td>
+                  <td>حمد السيد محمد احمد</td>
+                  <td>+966 50 254 2548</td>
+                  <td>السعودية</td>
+                  <td>01/01/2000</td>
+                  <td>احمد السيد محمد</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>نوع الخدمة</td>
+                  <td>01/01/2000</td>
+                  <td>حمد السيد محمد احمد</td>
+                  <td>+966 50 254 2548</td>
+                  <td>السعودية</td>
+                  <td>01/01/2000</td>
+                  <td>احمد السيد محمد</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>نوع الخدمة</td>
+                  <td>01/01/2000</td>
+                  <td>حمد السيد محمد احمد</td>
+                  <td>+966 50 254 2548</td>
+                  <td>السعودية</td>
+                  <td>01/01/2000</td>
+                  <td>احمد السيد محمد</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>نوع الخدمة</td>
+                  <td>01/01/2000</td>
+                  <td>حمد السيد محمد احمد</td>
+                  <td>+966 50 254 2548</td>
+                  <td>السعودية</td>
+                  <td>01/01/2000</td>
+                  <td>احمد السيد محمد</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td>نوع الخدمة</td>
+                  <td>01/01/2000</td>
+                  <td>حمد السيد محمد احمد</td>
+                  <td>+966 50 254 2548</td>
+                  <td>السعودية</td>
+                  <td>01/01/2000</td>
+                  <td>احمد السيد محمد</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>نوع الخدمة</td>
+                  <td>01/01/2000</td>
+                  <td>حمد السيد محمد احمد</td>
+                  <td>+966 50 254 2548</td>
+                  <td>السعودية</td>
+                  <td>01/01/2000</td>
+                  <td>احمد السيد محمد</td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td>نوع الخدمة</td>
+                  <td>01/01/2000</td>
+                  <td>حمد السيد محمد احمد</td>
+                  <td>+966 50 254 2548</td>
+                  <td>السعودية</td>
+                  <td>01/01/2000</td>
+                  <td>احمد السيد محمد</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="profile-tab-pane"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+          tabindex="0"
+        ></div>
+      </div>
+    </div>
+  </div>
+  <!-- MODULE
+  ******************************
+  ******************************
+  ******************************
+  ******************************
+  
+  -->
+  <!-- <div
+    class="modal fade"
+    id="newClientModal"
+    tabindex="-1"
+    aria-labelledby="newClientModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: #d9d9d9">
+        <div class="modal-header border-black">
+          <h1
+            class="modal-title fs-5 fw-bolder"
+            id="newClientModalLabel"
+            style="font-family: cairo"
+          >
+            اضافه عميل جديد
+          </h1>
+          <button
+            type="button"
+            class="btn-close m-0"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body fw-semibold" style="font-family: Cairo">
+          <form>
+            <div class="row">
+              <p>اجباري</p>
+              <div
+                class="col position-relative fw-bold"
+                style="font-family: cairo"
+              >
+                <label
+                  class="border border-secondary position-absolute fw-bold me-2 bg-white rounded-5 p-1"
+                >
+                  الاسم الاول<i
+                    class="fa-solid fa-star-of-life fa-2xs"
+                    style="color: #ff0000"
+                  ></i>
+                </label>
+                <input
+                  type="text"
+                  class="form-control mt-4 fw-semibold"
+                  aria-label="First name"
+                />
+              </div>
+              <div class="col position-relative" style="font-family: cairo">
+                <label
+                  class="border border-secondary position-absolute fw-bold me-2 bg-white rounded-5 p-1"
+                >
+                  اسم العائلة<i
+                    class="fa-solid fa-star-of-life fa-2xs"
+                    style="color: #ff0000"
+                  ></i>
+                </label>
+                <input
+                  type="text"
+                  class="form-control mt-4 fw-semibold"
+                  aria-label="Family name"
+                />
+              </div>
+            </div>
+          </form>
+          <div class="col mt-4 position-relative" style="font-family: cairo">
+            <label
+              class="border border-secondary translate-middle-y position-absolute fw-bold bg-white rounded-5"
+            >
+              رقم الجوال<i
+                class="fa-solid fa-star-of-life fa-2xs"
+                style="color: #ff0000"
+              ></i>
+            </label>
+            <input
+              type="text"
+              class="form-control mt-6 fw-semibold"
+              aria-label="phone number"
+              style="width: 50%"
+            />
+          </div>
+          <p class="m-2">اختياري</p>
+          <div class="row mt-3">
+            <div class="col position-relative" style="font-family: cairo">
+              <label
+                class="border border-secondary translate-middle-y position-absolute fw-bold bg-white rounded-5"
+              >
+                idPoos<i></i>
+              </label>
+              <input
+                type="text"
+                class="form-control mt-2 fw-semibold"
+                aria-label="First name"
+              />
+            </div>
+            <div class="col position-relative" style="font-family: cairo">
+              <label
+                class="border border-secondary translate-middle-y position-absolute fw-bold bg-white rounded-5"
+              >
+                عضويه العميل<i></i>
+              </label>
+              <input
+                type="text"
+                class="form-control mt-2 fw-semibold"
+                aria-label="Family name"
+              />
+            </div>
+          </div>
+          <div
+            class="col mt-4 position-relative fw-bold"
+            style="font-family: cairo"
+          >
+            <label
+              class="border border-secondary translate-middle-y position-absolute fw-bold bg-white rounded-5"
+            >
+              اسم الموظف<i></i>
+            </label>
+            <input
+              type="text"
+              class="form-control mt-6 fw-semibold"
+              aria-label="phone number"
+              style="width: 50%"
+            />
+          </div>
+        </div>
+        <div class="modal-footer border-black" style="font-family: cairo">
+          <button
+            type="button"
+            class="btn btn-dark border-0"
+            style="background-color: #42ba5c"
+          >
+            <i class="fa-solid fa-plus"></i>اضافه
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

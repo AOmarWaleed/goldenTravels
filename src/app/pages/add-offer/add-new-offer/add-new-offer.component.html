@@ -1,0 +1,625 @@
+<div class="conatiner m-4">
+  <div
+    class="d-flex border-bottom border-2 border-black justify-content-between align-items-center py-2"
+  >
+    <h3>اضافة عرض سعر</h3>
+    <a class="pointer btn" (click)="fallBack()">
+      <span class="fs-3 ms-3">الرجوع</span>
+      <i class="fas fa-arrow-left fs-2"></i>
+    </a>
+  </div>
+
+  <form
+    class="m-auto mt-5 p-3 border border-1 rounded-2"
+    style="max-width: 900px"
+  >
+    <!-- ****************************************** -->
+    <!-- ****************************************** -->
+    <h4>عدد الاشخاص وتاريخ السفر</h4>
+
+    <div class="d-flex my-4 align-items-center">
+      <!--  -->
+      <!--  -->
+      <div class="position-relative">
+        <input
+          type="number"
+          name=""
+          max="1000"
+          class="p-3 rounded-3 border border-2"
+          id=""
+          style="max-width: 120px"
+        />
+        <label
+          for=""
+          class="position-absolute rounded-pill border-2 border start-50 bg-white translate-middle p-1"
+          style="white-space: nowrap"
+          >عدد البالغين</label
+        >
+      </div>
+      <!--  -->
+      <!--  -->
+      <span class="p-2">+</span>
+      <!--  -->
+      <!--  -->
+      <div class="position-relative">
+        <input
+          type="number"
+          name=""
+          max="1000"
+          class="p-3 rounded-3 border border-2"
+          id=""
+          style="max-width: 120px"
+        />
+        <label
+          for=""
+          class="position-absolute rounded-pill border-2 border start-50 bg-white translate-middle p-1"
+          style="white-space: nowrap"
+          >عدد الاطفال</label
+        >
+      </div>
+      <!--  -->
+      <!--  -->
+      <span class="p-2">+</span>
+      <!--  -->
+      <!--  -->
+      <div class="position-relative">
+        <input
+          type="number"
+          name=""
+          max="1000"
+          class="p-3 rounded-3 border border-2"
+          id=""
+          style="max-width: 120px"
+        />
+        <label
+          for=""
+          class="position-absolute rounded-pill border-2 border start-50 bg-white translate-middle p-1"
+          style="white-space: nowrap"
+          >عدد الرضع</label
+        >
+      </div>
+      <!--  -->
+      <!--  -->
+      <span class="p-2">=</span>
+      <!--  -->
+      <!--  -->
+      <div class="position-relative">
+        <input
+          type="number"
+          name=""
+          max="1000"
+          class="p-3 rounded-3 border border-2"
+          id=""
+          style="max-width: 120px"
+        />
+        <label
+          for=""
+          class="position-absolute rounded-pill border-2 border start-50 bg-white translate-middle p-1"
+          style="white-space: nowrap"
+        >
+          الاجمالي</label
+        >
+      </div>
+      <!--  -->
+      <!--  -->
+    </div>
+    <div class="d-flex my-4 align-items-center gap-3">
+      <!--  -->
+      <!--  -->
+      <div class="position-relative">
+        <mat-form-field>
+          <input
+            matInput
+            [matDatepicker]="picker1"
+            [formControl]="date"
+            [min]="nextDate"
+          />
+
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker1"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <label
+          for=""
+          class="position-absolute rounded-pill border-2 border start-50 bg-white translate-middle p-1"
+          style="white-space: nowrap"
+        >
+          تاريخ السفر</label
+        >
+      </div>
+      <!--  -->
+      <!--  -->
+      <div class="position-relative">
+        <mat-form-field>
+          <input
+            matInput
+            [matDatepicker]="picker2"
+            [formControl]="date"
+            [min]="nextDate"
+          />
+
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker2"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+
+        <label
+          for=""
+          class="position-absolute rounded-pill border-2 border start-50 bg-white translate-middle p-1"
+          style="white-space: nowrap"
+        >
+          تاريخ العوده</label
+        >
+      </div>
+
+      <!--  -->
+      <!--  -->
+      <div class="position-relative mb-3">
+        <!-- <input
+          type="number"
+          name=""
+          max="1000"
+          class="p-3 rounded-3 border border-2"
+          id=""
+          style="max-width: 120px"
+        /> -->
+        <select
+          class="p-2 rounded-3 border border-2"
+          style="max-width: 120px"
+          [(ngModel)]="model"
+        >
+          <option *ngFor="let item of list" [value]="item">{{ item }}</option>
+        </select>
+        <label
+          for=""
+          class="position-absolute rounded-pill border-2 border start-50 bg-white translate-middle p-1"
+          style="white-space: nowrap"
+          >عدد البالغين</label
+        >
+      </div>
+    </div>
+
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <!-- *********************************** CHECK BOXES -->
+    <div class="my-2">
+      <h4 class="fs-3">نوع الخدمه</h4>
+
+      <div class="d-flex gap-3 flex-wrap justify-content-between">
+        <!-- طيران دولى -->
+        <div
+          #internationalFlight
+          class="form-check border border-2 p-3 ps-5 rounded-3"
+          data-desc="internationalFlight"
+        >
+          <label
+            (change)="toggleAccor(internationalFlight)"
+            class="form-check-label"
+            for="internationalFlight"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="internationalFlight"
+            />
+            طيران دولى
+          </label>
+        </div>
+
+        <!--  -->
+        <!-- طيران داخلى -->
+        <div
+          #innerFlight
+          class="form-check border border-2 p-3 ps-5 rounded-3"
+          data-desc="innerFlight"
+        >
+          <label
+            (change)="toggleAccor(innerFlight)"
+            class="form-check-label"
+            for="innerFlight"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="innerFlight"
+            />
+            طيران داخلى
+          </label>
+        </div>
+
+        <!--  -->
+        <!-- hotels -->
+        <div
+          #hotels
+          class="form-check border border-2 p-3 ps-5 rounded-3"
+          data-desc="hotels"
+        >
+          <label
+            (change)="toggleAccor(hotels)"
+            class="form-check-label"
+            for="hotels"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="hotels"
+            />
+            فنادق
+          </label>
+        </div>
+
+        <!--  -->
+        <!--  -->
+        <div
+          #tours
+          class="form-check border border-2 p-3 ps-5 rounded-3"
+          data-desc="tours"
+        >
+          <label
+            (change)="toggleAccor(tours)"
+            class="form-check-label"
+            for="tours"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="tours"
+            />
+            جولات سياحيه
+          </label>
+        </div>
+
+        <!--  -->
+        <!--  -->
+        <div
+          #carRent
+          class="form-check border border-2 p-3 ps-5 rounded-3"
+          data-desc="carRent"
+        >
+          <label
+            (change)="toggleAccor(carRent)"
+            class="form-check-label"
+            for="carRent"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="carRent"
+            />
+            ايجار السيارات
+          </label>
+        </div>
+
+        <!--  -->
+        <!--  -->
+        <div
+          #internationalLicense
+          class="form-check border border-2 p-3 ps-5 rounded-3"
+          data-desc="internationalLicense"
+        >
+          <label
+            (change)="toggleAccor(internationalLicense)"
+            class="form-check-label"
+            for="internationalLicense"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="internationalLicense"
+            />
+            الرخصه الدوليه
+          </label>
+        </div>
+
+        <!--  -->
+        <!--  -->
+        <div
+          #visas
+          class="form-check border border-2 p-3 ps-5 rounded-3"
+          data-desc="visas"
+        >
+          <label
+            (change)="toggleAccor(visas)"
+            class="form-check-label"
+            for="visas"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="visas"
+            />
+            تاشيرات
+          </label>
+        </div>
+
+        <!--  -->
+        <!--  -->
+        <div
+          #otherServices
+          class="form-check border border-2 p-3 ps-5 rounded-3"
+          data-desc="otherServices"
+        >
+          <label
+            (change)="toggleAccor(otherServices)"
+            class="form-check-label"
+            for="otherServices"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="otherServices"
+            />
+            خدمات اخري
+          </label>
+        </div>
+
+        <!--  -->
+      </div>
+    </div>
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <mat-accordion [multi]="true" class="example-headers-align">
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <mat-expansion-panel
+        [style.backgroundColor]="
+          accordianObj.internationalFlight ? '#F2E9D8' : ''
+        "
+        [expanded]="accordianObj.internationalFlight"
+        [disabled]="!accordianObj.internationalFlight"
+        hideToggle
+      >
+        <mat-expansion-panel-header class="header__">
+          <h4>طيران دولى</h4>
+          <i
+            class="fas fa-angle-up fs-4"
+            style="transition: 0.3s"
+            [style.transform]="
+              accordianObj.internationalFlight
+                ? 'rotate(0deg)'
+                : 'rotate(180deg)'
+            "
+          ></i>
+        </mat-expansion-panel-header>
+
+        <form action="">
+          <h2>hi</h2>
+        </form>
+      </mat-expansion-panel>
+      <!--  -->
+
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <mat-expansion-panel
+        [style.backgroundColor]="accordianObj.innerFlight ? '#F2E9D8' : ''"
+        [expanded]="accordianObj.innerFlight"
+        [disabled]="!accordianObj.innerFlight"
+        hideToggle
+      >
+        <mat-expansion-panel-header class="header__">
+          <h4>طيران داخلى</h4>
+          <i
+            class="fas fa-angle-up fs-4"
+            style="transition: 0.3s"
+            [style.transform]="
+              accordianObj.innerFlight ? 'rotate(0deg)' : 'rotate(180deg)'
+            "
+          ></i>
+        </mat-expansion-panel-header>
+
+        <form action="">
+          <h2>hi</h2>
+        </form>
+      </mat-expansion-panel>
+      <!--  -->
+
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <mat-expansion-panel
+        [style.backgroundColor]="accordianObj.hotels ? '#F2E9D8' : ''"
+        [expanded]="accordianObj.hotels"
+        [disabled]="!accordianObj.hotels"
+        hideToggle
+      >
+        <mat-expansion-panel-header class="header__">
+          <h4>فنادق</h4>
+          <i
+            class="fas fa-angle-up fs-4"
+            style="transition: 0.3s"
+            [style.transform]="
+              accordianObj.hotels ? 'rotate(0deg)' : 'rotate(180deg)'
+            "
+          ></i>
+        </mat-expansion-panel-header>
+
+        <form action="">
+          <h2>hi</h2>
+        </form>
+      </mat-expansion-panel>
+      <!--  -->
+
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <mat-expansion-panel
+        [style.backgroundColor]="accordianObj.tours ? '#F2E9D8' : ''"
+        [expanded]="accordianObj.tours"
+        [disabled]="!accordianObj.tours"
+        hideToggle
+      >
+        <mat-expansion-panel-header class="header__">
+          <h4>جولات سياحيه</h4>
+          <i
+            class="fas fa-angle-up fs-4"
+            style="transition: 0.3s"
+            [style.transform]="
+              accordianObj.tours ? 'rotate(0deg)' : 'rotate(180deg)'
+            "
+          ></i>
+        </mat-expansion-panel-header>
+
+        <form action="">
+          <h2>hi</h2>
+        </form>
+      </mat-expansion-panel>
+      <!--  -->
+
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <mat-expansion-panel
+        [style.backgroundColor]="accordianObj.carRent ? '#F2E9D8' : ''"
+        [expanded]="accordianObj.carRent"
+        [disabled]="!accordianObj.carRent"
+        hideToggle
+      >
+        <mat-expansion-panel-header class="header__">
+          <h4>ايجار سيارات</h4>
+          <i
+            class="fas fa-angle-up fs-4"
+            style="transition: 0.3s"
+            [style.transform]="
+              accordianObj.carRent ? 'rotate(0deg)' : 'rotate(180deg)'
+            "
+          ></i>
+        </mat-expansion-panel-header>
+
+        <form action="">
+          <h2>hi</h2>
+        </form>
+      </mat-expansion-panel>
+      <!--  -->
+
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <mat-expansion-panel
+        [style.backgroundColor]="
+          accordianObj.internationalLicense ? '#F2E9D8' : ''
+        "
+        [expanded]="accordianObj.internationalLicense"
+        [disabled]="!accordianObj.internationalLicense"
+        hideToggle
+      >
+        <mat-expansion-panel-header class="header__">
+          <h4>الرخصه الدوليه</h4>
+          <i
+            class="fas fa-angle-up fs-4"
+            style="transition: 0.3s"
+            [style.transform]="
+              accordianObj.internationalLicense
+                ? 'rotate(0deg)'
+                : 'rotate(180deg)'
+            "
+          ></i>
+        </mat-expansion-panel-header>
+
+        <form action="">
+          <h2>hi</h2>
+        </form>
+      </mat-expansion-panel>
+      <!--  -->
+
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <mat-expansion-panel
+        [style.backgroundColor]="accordianObj.visas ? '#F2E9D8' : ''"
+        [expanded]="accordianObj.visas"
+        [disabled]="!accordianObj.visas"
+        hideToggle
+      >
+        <mat-expansion-panel-header class="header__">
+          <h4>تاشيرات</h4>
+          <i
+            class="fas fa-angle-up fs-4"
+            style="transition: 0.3s"
+            [style.transform]="
+              accordianObj.visas ? 'rotate(0deg)' : 'rotate(180deg)'
+            "
+          ></i>
+        </mat-expansion-panel-header>
+
+        <form action="">
+          <h2>hi</h2>
+        </form>
+      </mat-expansion-panel>
+      <!--  -->
+
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <mat-expansion-panel
+        [style.backgroundColor]="accordianObj.otherServices ? '#F2E9D8' : ''"
+        [expanded]="accordianObj.otherServices"
+        [disabled]="!accordianObj.otherServices"
+        hideToggle
+      >
+        <mat-expansion-panel-header class="header__">
+          <h4>خدمات اخري</h4>
+          <i
+            class="fas fa-angle-up fs-4"
+            style="transition: 0.3s"
+            [style.transform]="
+              accordianObj.otherServices ? 'rotate(0deg)' : 'rotate(180deg)'
+            "
+          ></i>
+        </mat-expansion-panel-header>
+
+        <form action="">
+          <h2>hi</h2>
+        </form>
+      </mat-expansion-panel>
+      <!--  -->
+
+      <!--  -->
+    </mat-accordion>
+
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <!-- *********************************** -->
+    <button
+      type="submit"
+      class="btn btn-dark border-0 mt-5 offset-5"
+      style="background-color: #42ba5c"
+    >
+      اضافة
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </form>
+</div>

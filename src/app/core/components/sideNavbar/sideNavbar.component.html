@@ -1,0 +1,128 @@
+<div class="sidebar" #sidebar>
+  <div class="logo_details">
+    <i class="bx bxl-audible icon"></i>
+    <div class="logo_name fw-bolder" style="font-family: cairo">الذهبيـة</div>
+    <i class="bx bx-menu" #closeBtn id="btn" (click)="close(sidebar)"></i>
+  </div>
+  <ul #navList class="nav-list ps-0">
+    <li>
+      <i (click)="searchBtn(sidebar)" class="bx bx-search"></i>
+      <input type="text" placeholder="اكتب هنا" />
+      <span class="tooltip">اكتب هنا</span>
+    </li>
+    <li>
+      <a class="pointer" routerLink="/">
+        <i class="bx bxs-home"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo">
+          الرئيسية</span
+        >
+      </a>
+      <span class="tooltip">Dashboard</span>
+    </li>
+    <li>
+      <a class="pointer" routerLink="/addCustomer">
+        <i class="bx bx-group"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo">
+          اضافة عميل جديد</span
+        >
+      </a>
+      <span class="tooltip">Dashboard</span>
+    </li>
+    <li>
+      <a class="pointer" routerLink="[]">
+        <i class="bx bx-search-alt"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo">
+          ألبحث عن عميل</span
+        >
+      </a>
+      <span class="tooltip">Dashboard</span>
+    </li>
+    <li>
+      <a class="pointer" routerLink="/addOffer">
+        <i class="bx bx-coin"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo">
+          اضافة عرض</span
+        >
+      </a>
+      <span class="tooltip">User</span>
+    </li>
+    <li>
+      <a class="pointer" routerLink="[]">
+        <i class="bx bxs-discount"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo">
+          بحث في العروض
+        </span>
+      </a>
+      <span class="tooltip">Message</span>
+    </li>
+    <li>
+      <a class="pointer" routerLink="[]">
+        <i class="bx bx-book-content"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo"
+          >العقود</span
+        >
+      </a>
+      <span class="tooltip">Order</span>
+    </li>
+    <li>
+      <a class="pointer" routerLink="[]">
+        <i class="bx bxs-hotel"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo"
+          >الفنادق</span
+        >
+      </a>
+      <span class="tooltip">Order</span>
+    </li>
+    <li>
+      <a class="pointer" routerLink="[]">
+        <i class="bx bxs-purchase-tag-alt"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo">
+          عروض الاسعار</span
+        >
+      </a>
+      <span class="tooltip">Order</span>
+    </li>
+    <li>
+      <a class="pointer" routerLink="[]">
+        <i class="bx bx-registered"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo"
+          >التسجيل</span
+        >
+      </a>
+      <span class="tooltip">Order</span>
+    </li>
+    <li>
+      <a class="pointer" routerLink="[]">
+        <i class="bx bxs-log-in"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo"
+          >الدخول</span
+        >
+      </a>
+      <span class="tooltip">Order</span>
+    </li>
+
+    <li>
+      <a class="pointer" routerLink="[]">
+        <i class="bx bx-cog"></i>
+        <span class="link_name fw-semibold" style="font-family: cairo"
+          >الاعدادات</span
+        >
+      </a>
+      <span class="tooltip">Settings</span>
+    </li>
+    <li class="profile">
+      <div class="profile_details justify-content-end">
+        <img src="assets/Rectangle 4.png" alt="profile image" />
+        <div class="profile_content">
+          <div class="name fw-bold" style="font-family: cairo">
+            Galal Montaser
+          </div>
+          <div class="designation fw-semibold" style="font-family: cairo">
+            Admin
+          </div>
+        </div>
+      </div>
+      <i class="bx bx-log-out" id="log_out"></i>
+    </li>
+  </ul>
+</div>

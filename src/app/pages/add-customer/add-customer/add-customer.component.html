@@ -1,0 +1,111 @@
+<div class="conatiner m-4">
+  <div
+    class="d-flex border-bottom border-2 border-black justify-content-between align-items-center py-2"
+  >
+    <h3>اضافة عميل جديد</h3>
+    <a class="pointer btn" (click)="fallBack()">
+      <span class="fs-3 ms-3">الرجوع</span>
+      <i class="fas fa-arrow-left fs-2"></i>
+    </a>
+  </div>
+
+  <form
+    (ngSubmit)="addCustomer()"
+    [formGroup]="addCustomerForm"
+    class="m-auto mt-5 bg-white p-3 border border-1 rounded-2"
+    style="max-width: 900px"
+  >
+    <!-- *************************************** firstNmae -->
+    <label for="" class="my-3">الاسم الاول</label>
+    <input formControlName="firstName" type="text" class="form-control" />
+    <div
+      class="alert alert-danger py-2 my-2"
+      *ngIf="firstName?.errors && (firstName?.touched || isSubmit)"
+    >
+      <p class="m-0" *ngIf="firstName?.getError('required')">
+        الرجاء ادخال الاسم الاول
+      </p>
+    </div>
+    <!-- ****************************************** -->
+    <!-- ****************************************** -->
+    <!-- *************************************** familyName -->
+    <label for="" class="my-3">الاسم العائله</label>
+    <input formControlName="familyName" type="text" class="form-control" />
+    <div
+      class="alert alert-danger py-2 my-2"
+      *ngIf="familyName?.errors && (familyName?.touched || isSubmit)"
+    >
+      <p class="m-0" *ngIf="familyName?.getError('required')">
+        الرجاء ادخال اسم العائله
+      </p>
+    </div>
+    <!-- ****************************************** -->
+    <!-- ****************************************** -->
+    <!-- *************************************** phoneNumber -->
+    <label for="" class="my-3">رقم الجوال</label>
+    <input formControlName="phoneNumber" type="tel" class="form-control" />
+    <div
+      class="alert alert-danger py-2 my-2"
+      *ngIf="phoneNumber?.errors && (phoneNumber?.touched || isSubmit)"
+    >
+      <p class="m-0" *ngIf="phoneNumber?.getError('required')">
+        الرجاء ادخال رقم الجوال
+      </p>
+    </div>
+    <!-- ****************************************** -->
+    <!-- ****************************************** -->
+    <!-- *************************************** idPoss -->
+    <label for="" class="my-3">ID Poos</label>
+    <input formControlName="idPoos" type="number" class="form-control" />
+    <div
+      class="alert alert-danger py-2 my-2"
+      *ngIf="idPoos?.errors && (idPoos?.touched || isSubmit)"
+    >
+      <p class="m-0" *ngIf="idPoos?.getError('required')">
+        الرجاء ادخال ID Poos
+      </p>
+    </div>
+    <!-- ****************************************** -->
+    <!-- ****************************************** -->
+    <!-- *************************************** Client Membership -->
+    <label for="" class="my-3">عضوية العميل</label>
+    <input
+      formControlName="clientMembership"
+      type="text"
+      class="form-control"
+    />
+    <div
+      class="alert alert-danger py-2 my-2"
+      *ngIf="
+        clientMembership?.errors && (clientMembership?.touched || isSubmit)
+      "
+    >
+      <p class="m-0" *ngIf="clientMembership?.getError('required')">
+        الرجاء ادخال عضوية العميل
+      </p>
+    </div>
+    <!-- ****************************************** -->
+    <!-- ****************************************** -->
+    <!-- *************************************** employerName -->
+    <label for="" class="my-3">اسم الموظف</label>
+    <input formControlName="employerName" type="text" class="form-control" />
+    <div
+      class="alert alert-danger py-2 my-2"
+      *ngIf="employerName?.errors && (employerName?.touched || isSubmit)"
+    >
+      <p class="m-0" *ngIf="employerName?.getError('required')">
+        الرجاء ادخال اسم الموظف
+      </p>
+    </div>
+    <!-- ****************************************** -->
+    <!-- ****************************************** -->
+    <button
+      type="submit"
+      class="btn btn-dark border-0 mt-5 offset-5"
+      style="background-color: #42ba5c"
+    >
+      اضافة
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </form>
+</div>
